@@ -1,0 +1,160 @@
+// // src/pages/Homepage.jsx
+// import React from 'react';
+// import Navbar from '../components/Navbar/Navbar.jsx';
+// import './Homepage.css';
+// import Footer from '../components/Footer/Footer.jsx';
+// import { motion } from 'framer-motion';
+
+// export default function Homepage() {
+//   const products = [
+//     { id: 1, name: 'สินค้า A', price: '฿5,000', image: 'https://placehold.co/400x600' },
+//     { id: 2, name: 'สินค้า B', price: '฿7,500', image: 'https://placehold.co/400x600' },
+//     { id: 3, name: 'สินค้า C', price: '฿3,200', image: 'https://placehold.co/400x600' },
+//     { id: 4, name: 'สินค้า D', price: '฿9,900', image: 'https://placehold.co/400x600' },
+//   ];
+
+//   return (
+//     <div>
+//       {/* <Navbar /> */}
+//       <motion.main
+//         className="homepage-container"
+//         initial={{ opacity: 0, y: -50 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, ease: 'easeOut' }}
+//       >
+//         <div className="homepage-header">
+//           <h1 className="homepage-title">Welcome Na Kha!</h1>
+//           <p className="homepage-description">
+//             Hello World จ้า 69!
+//           </p>
+//         </div>
+
+//         <section className="product-section">
+//           <h2 className="section-title">สินค้าแนะนำ</h2>
+//           <div className="product-grid">
+//             {products.map((product) => (
+//               <motion.div
+//                 key={product.id}
+//                 className="product-card"
+//                 whileHover={{ scale: 1.05 }}
+//                 transition={{ type: 'spring', stiffness: 300 }}
+//               >
+//                 <img src={product.image} alt={product.name} className="product-image" />
+//                 <h3 className="product-name">{product.name}</h3>
+//                 <p className="product-price">{product.price}</p>
+//                 <button className="product-button">ดูรายละเอียด</button>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </section>
+//       </motion.main>
+//       {/* <Footer /> */}
+//     </div>
+//   );
+// }
+
+
+import React, { useEffect, useState } from 'react';
+import Navbar from '../components/Navbar/Navbar.jsx';
+import './Homepage.css';
+import Footer from '../components/Footer/Footer.jsx';
+import { motion } from 'framer-motion';
+import axios from 'axios';
+
+export default function Homepage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/products');
+        if (response.data.success) {
+          setProducts(response.data.products);
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  return (
+    <div>
+      {/* <Navbar /> */}
+      <motion.main
+        className="homepage-container"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <div className="homepage-header">
+          <h1 className="homepage-title">Products</h1>
+          {/* <p className="homepage-description">Hello World จ้า 69!</p> */}
+        </div>
+
+        {/* Filter Section */}
+
+
+        <section className='filter-section'>
+          <div className="filter-content">
+            <h2 className="filter-title">Filters</h2>
+            <div className="filter-group">
+              <h3 className="filter-category">Category</h3>
+              <div className="filter-option">
+                <input type="checkbox" id="option1" />
+                <label htmlFor="option1">Option 1</label>
+              </div>
+              <div className="filter-option">
+                <input type="checkbox" id="option2" />
+                <label htmlFor="option2">Option 2</label>
+              </div>
+              <div className="filter-option">
+                <input type="checkbox" id="option3" />
+                <label htmlFor="option3">Option 3</label>
+              </div>
+            </div>
+            <div className="filter-group">
+              <h3 className="filter-category">Price</h3>
+              <div className="filter-option">
+                <input type="checkbox" id="option4" />
+                <label htmlFor="option4">Option 4</label>
+              </div>
+              <div className="filter-option">
+                <input type="checkbox" id="option5" />
+                <label htmlFor="option5">Option 5</label>
+              </div>
+              <div className="filter-option">
+                <input type="checkbox" id="option6" />
+                <label htmlFor="option6">Option 6</label>
+              </div>
+            </div>
+            <button className="apply-button">Apply Filters</button>
+          </div>
+        </section>
+
+        <section className="product-section">
+          {/* <h2 className="section-title">สินค้าแนะนำ</h2> */}
+          <div className="product-grid">
+            {products.map((product) => (
+              <motion.div
+                key={product.product_id}
+                className="product-card"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <img 
+                  src={`http://localhost:3000/products/${product.images_main}`} 
+                  alt={product.product_name} 
+                  className="product-image" 
+                />
+                <h3 className="product-name">{product.product_name}</h3>
+                {/* <button className="product-button">ดูรายละเอียด</button> */}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </motion.main>
+      {/* <Footer /> */}
+    </div>
+  );
+}

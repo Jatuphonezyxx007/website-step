@@ -1,0 +1,65 @@
+/* home.css */
+
+.pagination-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Pagination item styles */
+  .pagination-container .pagination-item {
+    width: 40px;
+    height: 40px;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #4b5563;
+    background-color: #f3f4f6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .pagination-container .pagination-item:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+  }
+  
+  /* Active page style */
+  .pagination-container .pagination-item.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+  
+  /* Disabled arrows style */
+  .pagination-container .pagination-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f3f4f6;
+  }
+  
+  /* Previous/Next buttons style */
+  .pagination-container .pagination-prev,
+  .pagination-container .pagination-next {
+    padding: 0 12px;
+    width: auto;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .pagination-container .pagination-item {
+      width: 32px;
+      height: 32px;
+      font-size: 0.875rem;
+    }
+    
+    .pagination-container .pagination-prev,
+    .pagination-container .pagination-next {
+      padding: 0 8px;
+    }
+  }

@@ -1,0 +1,41 @@
+/* Card.css */
+.card {
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* ทำให้ Card สามารถขยายความสูงตาม container ได้ */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-image {
+  overflow: hidden;
+  /* ไม่กำหนดความสูงตายตัว เพื่อให้ปรับตามขนาดภาพได้ 
+       หรือถ้าต้องการให้ภาพสูงเท่ากันทุกใบ อาจกำหนด height ไว้ก็ได้ */
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* ถ้าต้องการเอฟเฟกต์ zoom เมื่อ hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-image:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  /* ให้เนื้อหากินพื้นที่ที่เหลือได้เต็มที่ */
+  flex: 1;
+  padding: 1rem;
+}
+
+.card-footer {
+  margin-top: auto; /* ดัน footer ลงไปอยู่ด้านล่างเสมอ */
+  padding: 1rem;
+}

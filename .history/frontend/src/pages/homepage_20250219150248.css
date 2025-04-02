@@ -1,0 +1,118 @@
+/* Homepage.css */
+
+.homepage-container {
+    padding-top: 100px; /* ปรับระยะห่างจากด้านบนลงมา 100px */
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideDownFadeIn 0.8s forwards ease-out;
+    padding-top: 150px;
+  }
+  
+  @keyframes slideDownFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .homepage-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .homepage-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .homepage-description {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: #6b7280;
+  }
+  
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-section {
+    padding: 2rem 0;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+  
+  .product-name {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .product-price {
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    color: #10b981;
+  }
+  
+  .product-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .homepage-title {
+      font-size: 2rem;
+    }
+  
+    .homepage-description {
+      font-size: 1rem;
+    }
+  
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  

@@ -1,0 +1,45 @@
+/* กำหนดตำแหน่งของภาพหลัก */
+.image-container {
+    position: relative;
+    overflow: hidden; /* ซ่อนส่วนที่เกินจากขอบ */
+    width: 100%;
+    max-width: 500px; /* ขนาดสูงสุดของภาพ */
+  }
+  
+  /* ซ่อนภาพซูมเริ่มต้น */
+  .zoomed-image {
+    position: absolute;
+    display: none; /* ซ่อนเมื่อไม่มีการโต้ตอบ */
+    width: 300px; /* ขนาดภาพซูมใหม่ที่ใหญ่ขึ้น */
+    height: 300px; /* ขนาดภาพซูมใหม่ที่ใหญ่ขึ้น */
+    background-color: rgba(255, 255, 255, 0.7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none; /* ป้องกันไม่ให้คลิกที่ภาพซูม */
+  }
+  
+  /* ปรับขนาดให้เหมาะสม */
+  .main-image {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+  }
+  
+  .main-image:hover {
+    transform: scale(1.1);
+  }
+  
+
+  .modal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .modal-image {
+    max-width: 80vw;
+    height: auto;
+  }
+  

@@ -1,0 +1,118 @@
+/* Footer.css */
+
+.footer-container {
+  background-color: #111827;
+  color: white;
+  padding: 3rem 1rem;
+  padding-bottom: 80px;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.footer-section ul li:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.footer-section p {
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social svg {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-social svg:hover {
+  color: #3b82f6;
+}
+
+.certification-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-hashtags {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+}
+
+.footer-bottom a {
+  color: #3b82f6;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.line-contact-btn {
+  background-color: #00c300;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.line-contact-btn:hover {
+  background-color: #009f00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+footer a {
+  color: #fcfcfc; /* สีฟ้าอ่อน */
+  text-decoration: none; /* ลบเส้นใต้ */
+}
+
+.line-contact-btn a {
+  color: white; /* เปลี่ยนสีตัวหนังสือในลิงก์เป็นสีขาว */
+  text-decoration: none; /* ลบเส้นใต้ในลิงก์ */
+}

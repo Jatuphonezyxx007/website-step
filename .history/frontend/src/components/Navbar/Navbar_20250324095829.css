@@ -1,0 +1,196 @@
+/* Navbar.css */
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-logo .logo-image {
+    height: 65px;
+    width: 170px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .category-icon {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .category-icon:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .category-item {
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-item:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    position: relative;
+    margin: 0 1.5rem;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #9ca3af;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #1d4ed8;
+  }
+  
+  .profile-icon {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-icon-image {
+    width: 36px;
+    height: 36px;
+    color: #ffffff;
+  }
+  
+  /* Bottom Navbar (Mobile Only) */
+  .bottom-navbar {
+    display: none;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  
+  .bottom-navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #4b5563;
+    transition: color 0.3s;
+  }
+  
+  .bottom-navbar-item.active {
+    color: #ef4444;
+  }
+  
+  .bottom-navbar-item:hover {
+    color: #1d4ed8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .bottom-navbar {
+      display: flex;
+    }
+  
+    .hidden-mobile {
+      display: none !important; /* ซ่อน dropdown และไอคอนเมื่อหน้าจอเล็ก */
+    }
+  
+    .navbar-container {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .profile-icon {
+      display: none; /* ซ่อนไอคอนโปรไฟล์เมื่อหน้าจอเล็ก */
+    }
+  
+    .category-icon {
+      display: none; /* ซ่อนไอคอนหมวดหมู่เมื่อหน้าจอเล็ก */
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .bottom-navbar {
+      display: none;
+    }
+  
+    .profile-icon,
+    .category-icon {
+      display: flex; /* แสดงไอคอนโปรไฟล์และหมวดหมู่เมื่อหน้าจอใหญ่ */
+    }
+  }
+
+  /* ProductList.css */
+.filter-sidebar {
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.filter-sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.filter-sidebar.expanded {
+  transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .filter-sidebar {
+    transform: translateX(0);
+  }
+}
+  

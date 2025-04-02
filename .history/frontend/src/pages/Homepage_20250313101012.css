@@ -1,0 +1,104 @@
+/* Homepage.css */
+
+.homepage-container {
+  padding-top: 100px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDownFadeIn 0.8s forwards ease-out;
+  padding-top: 150px;
+}
+
+@keyframes slideDownFadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Product List Layout */
+.product-list-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Sidebar for filters */
+.filter-sidebar {
+  width: 25%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product grid styling */
+.product-grid {
+  width: 75%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Product card styling */
+.product-card {
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling */
+.product-image {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Product name and price styling */
+.product-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-category {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Pagination Styling */
+.custom-pagination .nextui-pagination-item {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.custom-pagination .nextui-pagination-item:hover {
+  background-color: #0056b3;
+}
+
+.custom-pagination .nextui-pagination-item-active {
+  background-color: #1e40af;
+  color: white;
+}
